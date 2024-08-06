@@ -2,6 +2,7 @@ import nodemailer from "nodemailer"
 
 import { otpEmail } from "./emailTemplates/otp.js";
 import { thankYouEmail } from "./emailTemplates/Thankyou.js";
+import { email, password } from "./constaints.js";
 
 
 
@@ -12,8 +13,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: 'one9.devloper@gmail.com', // your Gmail address
-      pass: 'nkpa kwhm xbnp plmj', // your Gmail password
+      user: email, // your Gmail address
+      pass: password, // your Gmail password
     },
   });
 

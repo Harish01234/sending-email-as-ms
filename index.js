@@ -1,7 +1,9 @@
 import express, { json } from "express";
 import cors from "cors";
 import { sendMail, mailOptions } from "./sendmail.js";
-import 'dotenv/config'
+import * as dotenv from 'dotenv'
+dotenv.config({  path: './.env'})
+
 const app = express();
 
 
@@ -9,6 +11,9 @@ app.use(cors());
 app.use(json());
 
 app.post('/', async (req, res) => {
+
+    console.log(process.env.PASSWORD);
+    
     const email = req.body.email;
     console.log(email);
 
